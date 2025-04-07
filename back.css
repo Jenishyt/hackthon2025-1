@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.top-banner {
+  background-color: #111;
+  color: #0f0;
+  font-size: 18px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle-banner {
+  background-color: #ffeb3b;
+  color: #000;
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.scrolling-text {
+  animation: scrollText 20s linear infinite;
+  display: inline-block;
+  padding-left: 100%;
+}
+@keyframes scrollText {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+.map-view {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  grid-template-rows: 1fr 60px 1fr;
+  flex: 1;
+}
+.block {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  background-color: #fdfdfd;
+}
+.block-a, .block-b {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.block-c, .block-d {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.road {
+  background-color: #d0d0d0;
+  color: #555;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-weight: bold;
+}
+.parking-slot {
+  background-color: green;
+  border-radius: 8px;
+  color: transparent;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.parking-slot:hover {
+  transform: scale(1.05);
+}
+.parking-slot.revealed {
+  color: white;
+  background-color: #4caf50;
+  animation: revealSlot 0.3s ease-out;
+}
+.parking-slot.occupied {
+  background-color: red !important;
+  color: white;
+}
+.parking-slot.booked {
+  animation: bookedFlash 0.4s ease-in-out;
+}
+@keyframes revealSlot {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bookedFlash {
+  0% { background-color: #4caf50; }
+  50% { background-color: red; transform: scale(1.2); }
+  100% { background-color: red; transform: scale(1); }
+}
+.message-container {
+  width: 300px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+#slot-status-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+#slot-status-heading button {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#slot-status-message {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+#parking-message {
+  flex-grow: 1;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: 12px;
+  border-top: 1px dashed #ccc;
+  padding-top: 10px;
+}
+.log-message {
+  margin-bottom: 6px;
+}
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.buy-btn {
+  background-color: #2196f3;
+  color: white;
+  margin-bottom: 8px;
+}
+.buy-btn:hover {
+  background-color: #1976d2;
+}
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+#qr-box {
+  width: 100%;
+  height: 140px;
+  background: url('https://api.qrserver.com/v1/create-qr-code/?data=DEMO&size=140x140') center/contain no-repeat;
+  margin-bottom: 12px;
+  display: none;
+}
+
+  
