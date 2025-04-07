@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Parking System</title>
+  <link rel="stylesheet" href="back.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="top-banner">
+    <div id="space-info">Loading available slots...</div>
+  </div>
+  <div class="middle-banner">
+    <div class="scrolling-text">Book your spot for just ₹19/₹49 only!</div>
+  </div>
+  <div class="content-wrapper">
+    <div class="map-view">
+      <div class="block block-a" id="block-a"></div>
+      <div class="road">EXIT</div>
+      <div class="block block-b" id="block-b"></div>
+      <div class="road">ENTRY</div>
+      <div class="road">ROAD</div>
+      <div class="road">ENTRY</div>
+      <div class="block block-c" id="block-c"></div>
+      <div class="road">ROAD</div>
+      <div class="block block-d" id="block-d"></div>
+    </div>
+    <div class="message-container">
+      <div id="slot-status-heading">
+        Slot Status
+        <button id="cheat-btn"></button>
+      </div>
+      <div id="slot-status-message">Click a slot to reveal its number.</div>
+      <div id="qr-box"></div>
+      <div id="parking-message"></div>
+      <button id="buy-btn" class="buy-btn" style="display:none;"></button>
+      <button id="cancel-btn" class="cancel-btn" style="display:none;">Cancel</button>
+    </div>
+  </div>
+</div>
+<script src="back.js"></script>
+</body>
+</html>
